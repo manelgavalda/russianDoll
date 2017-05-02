@@ -1,6 +1,7 @@
 <?php
 
 namespace App;
+use Cache;
 
 
 /**
@@ -9,14 +10,19 @@ namespace App;
  */
 class Matriushka
 {
+
+    protected static $key;
     /**
      * @param $expression
      * @return string
      */
     public static function setUp($model)
     {
+        ob_start();
 
-        return 'hola';
+        static::$key = $model->getCacheKey();
+//        return 'prova 1';
+        return Cache::has(static::$key);
     }
 
     /**
@@ -24,6 +30,9 @@ class Matriushka
      */
     public static function tearDown()
     {
-        return 'adeu';
+//        $html = "prova";
+
+        $html = ob_get_clean();
+        echo $html;
     }
 }
