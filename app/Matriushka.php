@@ -22,6 +22,7 @@ class Matriushka
 
         static::$key = $model->getCacheKey();
 //        return 'prova 1';
+        ob_start();
         return Cache::has(static::$key);
     }
 
@@ -33,6 +34,9 @@ class Matriushka
 //        $html = "prova";
 
         $html = ob_get_clean();
-        echo $html;
+        return Cache::tags('views')
+            ->rememberForever($key, function () use ($html) {
+                return $html;
+        });
     }
 }
