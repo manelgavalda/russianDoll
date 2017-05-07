@@ -21,7 +21,6 @@ class Matriushka
         ob_start();
 
         static::$key = $model->getCacheKey();
-//        return 'prova 1';
         ob_start();
         return Cache::has(static::$key);
     }
@@ -31,7 +30,6 @@ class Matriushka
      */
     public static function tearDown()
     {
-//        $html = "prova";
 
         $html = ob_get_clean();
         return Cache::tags('views')
