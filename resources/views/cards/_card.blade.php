@@ -13,24 +13,14 @@
         </div>
 
         <div class="content">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            Phasellus nec iaculis mauris. <a>@bulmaio</a>.
-            <a>#css</a> <a>#responsive</a>
-            <br>
-            <small>11:09 PM - 1 Jan 2016</small>
+            <ul>
+                @foreach ($card->notes as $note)
+                    @include ('cards/_note')
+                @endforeach
+            </ul>
         </div>
     </div>
 </div>
-
-    <article class="Card">
-        <h2></h2>
-
-        <ul>
-            @foreach ($card->notes as $note)
-                @include ('cards/_note')
-            @endforeach
-        </ul>
-    </article>
 @endcache
 
 
