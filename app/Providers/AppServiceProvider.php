@@ -16,7 +16,7 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         Blade::directive('cache', function ($expression) {
-            return "<?php if (App\Matriushka::setUp($expression)) { ?>";
+            return "<?php if (! App\Matriushka::setUp($expression)) { ?>";
         });
 
         Blade::directive('endcache', function ($expression) {
