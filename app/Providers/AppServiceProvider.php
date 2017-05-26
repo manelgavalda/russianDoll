@@ -2,7 +2,6 @@
 
 namespace App\Providers;
 
-use App\Matriushka;
 use Blade;
 use Illuminate\Support\ServiceProvider;
 

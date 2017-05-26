@@ -17,8 +17,6 @@ class DatabaseSeeder extends Seeder
             $u->notes()->save(factory(App\Note::class)->make());
             $u->notes()->save(factory(App\Note::class)->make());
             $u->notes()->save(factory(App\Note::class)->make());
-            $u->notes()->save(factory(App\Note::class)->make());
-            $u->notes()->save(factory(App\Note::class)->make());
         });
     }
 }

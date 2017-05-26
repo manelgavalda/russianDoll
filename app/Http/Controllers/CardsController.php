@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Card;
-use Cache;
 
 class CardsController extends Controller
 {
